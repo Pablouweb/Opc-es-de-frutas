@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escolha sua Fruta</title>
+    <style>
+        body {
+            background-color: #f0ffe6;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            padding-top: 50px;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        select, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Temas de frutas com imagens (adicione os caminhos certos abaixo) */
+        .tema-banana {
+            background-image: url("/banana.png");
+            background-repeat: repeat;
+            background-size: 300px;
+
+        }
+
+        .tema-maca {
+            background-image: url("/maca.png");
+            background-repeat: repeat;
+            background-size: 300px;
+        }
+
+        .tema-laranja {
+            background-image: url("/laranja.png");
+            background-repeat: repeat;
+            background-size: 300px;
+        }
+
+        .tema-uva {
+            background-image: url("/uva.png");
+            background-repeat: repeat;
+            background-size: 300px;
+        }
+
+        .tema-mamao {
+            background-image: url("/mamão.png");
+            background-repeat: repeat;
+            background-size: 300px;
+        }
+
+        /* Tema padrão */
+        .tema-claro {
+            background-image: none;
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha uma fruta</h1>
+
+    <select id="frutaSelect">
+        <option value="">--Selecione--</option>
+        <option value="banana">Banana</option>
+        <option value="maca">Maçã</option>
+        <option value="laranja">Laranja</option>
+        <option value="uva">Uva</option>
+        <option value="mamao">Mamão</option>
+    </select>
+
+    <br>
+    <button onclick="mostrarBeneficio()">Ver Benefício</button>
+
+    <script>
+        function mostrarBeneficio() {
+            const fruta = document.getElementById('frutaSelect').value;
+
+            // Remove todas as classes de tema
+            document.body.className = '';
+
+            switch (fruta) {
+                case 'banana':
+                    document.body.classList.add("tema-banana");
+                    alert("Você escolheu Banana. Benefício: Rica em potássio, ajuda a prevenir câimbras.");
+                    break;
+                case 'maca':
+                    document.body.classList.add("tema-maca");
+                    alert("Você escolheu Maçã. Benefício: Boa para o coração e ajuda na digestão.");
+                    break;
+                case 'laranja':
+                    document.body.classList.add("tema-laranja");
+                    alert("Você escolheu Laranja. Benefício: Rica em vitamina C, fortalece o sistema imunológico.");
+                    break;
+                case 'uva':
+                    document.body.classList.add("tema-uva");
+                    alert("Você escolheu Uva. Benefício: Contém antioxidantes que fazem bem para o coração.");
+                    break;
+                case 'mamao':
+                    document.body.classList.add("tema-mamao");
+                    alert("Você escolheu Mamão. Benefício: Auxilia na digestão e é rico em fibras.");
+                    break;
+                default:
+                    document.body.classList.add("tema-claro");
+                    alert("Por favor, selecione uma fruta.");
+            }
+        }
+    </script>
+</body>
+</html>
